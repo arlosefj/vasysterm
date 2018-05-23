@@ -23,6 +23,8 @@ def getimage(camcode):
     return camimg, caminfo
 
 def analyse(camimg, caminfo):
+    # get preset from camimg name
+    # get tasktype from caminfo
     # detect image
     # strategy
     # upsend the result
