@@ -1,5 +1,5 @@
 {
-    "name" : "analyser1",
+    "name" : "storage1",
     "databaseserver":
     {
         "ip": "127.0.0.1",
