@@ -14,7 +14,8 @@
 
 def gettaskinfo():
     camlist = []
-    return camlist
+    taskidx = 0
+    return camlist, taskidx
 
 def getimage(camcode):
     camimg = ''
