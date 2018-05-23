@@ -11,5 +11,21 @@
 结果上报 @to存储服务器 @to管理服务器
     结果图片上传到存储服务器，结果内容添加到管理服务器上报事件信息数据库中
 '''
+
+def gettaskinfo():
+    camlist = []
+    return camlist
+
+def getimage(camcode):
+    camimg = ''
+    caminfo = ''
+    return camimg, caminfo
+
+def analyse(camimg, caminfo):
+    # detect image
+    # strategy
+    # upsend the result
+    return
+
 if __name__ == "__main__":
     print "analyse task"
