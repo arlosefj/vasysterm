@@ -1,4 +1,6 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-  
+# Author: arlose                                                                                                                                     
+# Create：2018/5/18
 import time
 from ASregister import register
 from ASstatus import sendstatus

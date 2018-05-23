@@ -1,4 +1,6 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-  
+# Author: arlose                                                                                                                                     
+# Create：2018/5/18
 '''
 获取配置信息 @from管理服务器
     读取管理服务器数据库中分析任务信息，解析其中相机编码列表
