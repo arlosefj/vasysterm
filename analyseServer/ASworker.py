@@ -16,7 +16,7 @@ if __name__ == "__main__":
     camlist, lasttaskidx = gettaskinfo()
     camcfgdict = getcamcfg(camlist)
     sendstatus()
-    newtaskflag = True
+    newtaskflag = False
     while True:
         # send status and get new taskinfo every #INTERVAL seconds
         curent = time.time()
