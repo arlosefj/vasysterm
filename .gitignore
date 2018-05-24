@@ -3,3 +3,7 @@ analyseServer/ASregister.pyc
 analyseServer/ASstatus.pyc
 manageServer/MSdatabase.pyc
 .vscode/settings.json
+analyseServer/ASgpuinfo.pyc
+database/MSdatabase.pyc
+common.pyc
+database/__init__.pyc

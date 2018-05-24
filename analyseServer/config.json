@@ -1,7 +1,11 @@
 {
     "name" : "analyser1",
+    "code": 4003,
+    "ipaddr": "192.168.0.101",
+    "gpuid": 0,
     "databaseserver":
     {
+        "name": "vasystem",
         "ip": "127.0.0.1",
         "port": 3306,
         "username": "root"
