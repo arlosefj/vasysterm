@@ -4,7 +4,7 @@
 import time
 from ASregister import register
 from ASstatus import sendstatus
-from ASanalyse import gettaskinfo, getimage, analyse
+from ASanalyse import gettaskinfo, getcamcfg, getimage, analyse
 
 INTERVAL = 30
 
@@ -14,6 +14,7 @@ if __name__ == "__main__":
     register()
     last = time.time()
     camlist, lasttaskidx = gettaskinfo()
+    camcfgdict = getcamcfg(camlist)
     sendstatus()
     newtaskflag = True
     while True:
@@ -31,8 +32,10 @@ if __name__ == "__main__":
         # analyse
         if newtaskflag:
             # do something init
+            camcfgdict = getcamcfg(camlist)
             newtaskflag = False
-        for camcode in camlist:
-            imagepath, imageinfo = getimage(camcode)
+
+        for camcode, platform in camlist:
+            imagepath = getimage(camcode, platform)
             if imagepath is not None:
-                analyse(imagepath, imageinfo)
+                analyse(camcode, imagepath, camcfgdict[camcode].encode('ascii'))

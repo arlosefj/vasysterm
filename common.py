@@ -13,3 +13,13 @@ ASERVER = 4
 SOFFLINE = 0
 SONLINE = 1
 SERROR = 2
+
+NOPRESET = "{\"length\":0}"
+
+WT = "0"
+DWD = "1"
+LDTF = "2"
+
+EWT = int(WT)
+EDWD = int(DWD)
+ELDTF = int(LDTF)

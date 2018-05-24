@@ -25,7 +25,7 @@ def sendstatus():
     gpumem, gpuusage = queryGPUInfo(gpuid)
 
     # update the status on the manage server database
-    asr = AServer.update(gpuusage=gpuusage,gpumem=gpumem,model="m1",updatetime=datetime.datetime.now()).where(AServer.code==code)
+    asr = AServer.update(gpuusage=gpuusage,gpumem=gpumem,updatetime=datetime.datetime.now()).where(AServer.code==code)
     asr.execute()
     
     return 

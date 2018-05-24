@@ -24,9 +24,10 @@ def register():
     gpumem, gpuusage = queryGPUInfo(gpuid)
 
     # register on the manage server database
-    AServer.create(code=code,name=asname,servertype=ASERVER,status=SONLINE,ipaddr=ipaddr,
-        gpuusage=gpuusage,gpumem=gpumem,model="",regtime=datetime.datetime.now(), updatetime=datetime.datetime.now())
-
+    try:
+        AServer.create(code=code,name=asname,servertype=ASERVER,status=SONLINE,ipaddr=ipaddr,gpuusage=gpuusage,gpumem=gpumem,model="",regtime=datetime.datetime.now(), updatetime=datetime.datetime.now())
+    except:
+        print str(code)+" is registed"
     return
 
 if __name__ == "__main__":

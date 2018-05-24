@@ -126,20 +126,18 @@ class CamPreset(BaseModel):
     lasttime = DateTimeField()
 
 #解码任务信息
-# id（主键），服务器编码（唯一，与解码服务器对应），相机编码列表（如果是平台下的相机需要加上平台编码，如 平台编码_相机编码），任务编号，最后一次任务更新时间
+# id（主键），服务器编码（唯一，与解码服务器对应），相机编码列表（如果是平台下的相机需要加上平台编码，如 平台编码_相机编码），最后一次任务更新时间
 class VTask(BaseModel):
     # id = IntegerField(primary_key=True)
     code = IntegerField(unique=True)
-    idx = IntegerField()
     camlist = TextField()
     lasttime = DateTimeField()
 
 #分析任务信息
-# id（主键），服务器编码（唯一，与分析服务器对应），相机编码列表（如果是平台下的相机需要加上平台编码，如 平台编码_相机编码），任务编号，最后一次任务更新时间
+# id（主键），服务器编码（唯一，与分析服务器对应），相机编码列表（如果是平台下的相机需要加上平台编码，如 平台编码_相机编码），最后一次任务更新时间
 class ATask(BaseModel):
     # id = IntegerField(primary_key=True)
     code = IntegerField(unique=True)
-    idx = IntegerField()
     camlist = TextField()
     lasttime = DateTimeField()
 
