@@ -1,5 +1,8 @@
 {
     "name" : "capture1",
+    "cpuid":0,
+    "code":1204,
+    "localdir":"./image/",
     "databaseserver":
     {
         "ip": "127.0.0.1",
