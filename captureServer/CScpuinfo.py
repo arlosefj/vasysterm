@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-  
 # Author: hsg                                                                                                                                     
-# Create£º2018/5/28
-#·þÎñÆ÷×´Ì¬ÉÏ±¨ @to¹ÜÀí·þÎñÆ÷ ¶¨Ê±ÉÏ±¨·þÎñÆ÷×´Ì¬£¬·þÎñÆ÷CPUÊ¹ÓÃÇé¿ö£¬ÄÚ´æÊ£ÓàÇé¿ö
+# Createï¿½ï¿½2018/5/28
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½Ï±ï¿½ @toï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ê±ï¿½Ï±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½CPUÊ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½
 
-#ÏÈÏÂÔØpsutil¿â:pip install psutil
+#ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½psutilï¿½ï¿½:pip install psutil
 
 import psutil
 import os,datetime,time
 
-def 	queryCPUInfo(cpuid):
+def queryCPUInfo(cpuid):
 		try:	
-	    	data = psutil.virtual_memory()
-	      total = data.total #×ÜÄÚ´æ,µ¥Î»Îªbyte
-	      free = data.available #¿ÉÓÃÄÚ´æ
-	      cpumem =  "Memory usage:%d"%(int(round(data.percent)))+"%"+"  "
-	      cpuusage = "CPU:%0.2f"%psutil.cpu_percent(interval=1)+"%"
+	    data = psutil.virtual_memory()
+	    total = data.total #ï¿½ï¿½ï¿½Ú´ï¿½,ï¿½ï¿½Î»Îªbyte
+	    free = data.available #ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
+	    cpumem =  "Memory usage:%d"%(int(round(data.percent)))+"%"+"  "
+	    cpuusage = "CPU:%0.2f"%psutil.cpu_percent(interval=1)+"%"
 	  except:
 	  		info = "no cpu found"
 	  return cpumem,cpuusage

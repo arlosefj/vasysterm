@@ -13,22 +13,22 @@ from CScpuinfo import queryCPUInfo
 from CSgettaskinfo import gettaskinfo,getcampreset
 
 #解析码流为图片
-def capture(camcode,campreset)
-		try:
-			#获取预置位编号和时间，给图片取名字
-			pass
-		except:
-			print "capture failed"
-		return
+def capture(camcode,campreset):
+	try:
+		#获取预置位编号和时间，给图片取名字
+		pass
+	except:
+		print "capture failed"
+	return
 
 #上传图片到存储服务器 @to存储服务器
-def sendpic(picid)
-		try:
-			#do something here
-			pass
-		except:
-			print "send pic failed"
-		return
+def sendpic(picid):
+	try:
+		#do something here
+		pass
+	except:
+		print "send pic failed"
+	return
 		
 if __name__ == "__main__":
 	print "capture process"
