@@ -1,46 +1,49 @@
 # -*- coding: utf-8 -*-  
 # Author: hsg                                                                                                                                     
-# Create£º2018/5/28
+# Createï¼š2018/5/28
 #
-# µÇÂ½Æ½Ì¨
-#        µ÷ÓÃ´ó»ªlinux SDKµÇÂ½¼à¿ØÆ½Ì¨
-# »ñÈ¡ÅäÖÃĞÅÏ¢ @from¹ÜÀí·şÎñÆ÷
-#        ¶ÁÈ¡¹ÜÀí·şÎñÆ÷Êı¾İ¿âÖĞ #½âÂëÈÎÎñĞÅÏ¢£¬½âÎöÆäÖĞÏà»ú±àÂëÁĞ±í
-# »ñÈ¡ÂëÁ÷
-#        ¸ù¾İÉÏÃæ»ñµÃµÄÏà»ú±àÂëÁĞ±í£¬µ÷ÓÃ´ó»ªlinux SDK»ñÈ¡Ã¿¸öÏà»úrtspÂëÁ÷µØÖ·
+# ç™»é™†å¹³å°
+#        è°ƒç”¨å¤§ålinux SDKç™»é™†ç›‘æ§å¹³å°
+# è·å–é…ç½®ä¿¡æ¯ @fromç®¡ç†æœåŠ¡å™¨
+#        è¯»å–ç®¡ç†æœåŠ¡å™¨æ•°æ®åº“ä¸­ #è§£ç ä»»åŠ¡ä¿¡æ¯ï¼Œè§£æå…¶ä¸­ç›¸æœºç¼–ç åˆ—è¡¨
+# è·å–ç æµ
+#        æ ¹æ®ä¸Šé¢è·å¾—çš„ç›¸æœºç¼–ç åˆ—è¡¨ï¼Œè°ƒç”¨å¤§ålinux SDKè·å–æ¯ä¸ªç›¸æœºrtspç æµåœ°å€
 
 import os
+import json
 import sys
 sys.path.append("..")
-from database.MSdatabase import AServer, SServer 
+from database.MSdatabase import VTask
 from common import *
 
-#µÇÂ¼´ó»ªÆ½Ì¨£¬¸ù¾İÏà»úÁĞ±í£¬»ñÈ¡Ã¿¸öÏà»úµÄrtspÂëÁ÷µØÖ·
+#ç™»å½•å¤§åå¹³å°ï¼Œæ ¹æ®ç›¸æœºåˆ—è¡¨ï¼Œè·å–æ¯ä¸ªç›¸æœºçš„rtspç æµåœ°å€
 def login():
-		#add code here
-		pass			
-		return
+	#add code here
+	pass			
+	return
 		
-# »ñÈ¡½âÂëÈÎÎñĞÅÏ¢
-def gettaskinfo():
-		t = VTask.get(VTask.code == code)
-		tmplist = t.camlist.encode('ascii').split(';')
-		camlist = []
-		for string in tmplist:
-        camcode, platform = string.strip().split(',')
-        camlist.append((camcode.strip(), platform.strip()))
-    return camlist, t.id
+# è·å–è§£ç ä»»åŠ¡ä¿¡æ¯
+def gettaskinfo(code):
+    t = VTask.get(VTask.code == code)
+	tmplist = t.camlist.encode('ascii').split(';')
+	camlist = []
+	for string in tmplist:
+        camcode, camnum = string.strip().split(',')
+		print camcode
+        camlist.append((camcode.strip(),camnum.strip()))
+    return camlist,t.id
 
-#»ñÈ¡Ïà»úÔ¤ÖÃÎ»ĞÅÏ¢
+#è·å–ç›¸æœºé¢„ç½®ä½ä¿¡æ¯
 def getcampreset(camcode):
-		#²¿·ÖÊı¾İ¿â²Ù×÷»¹ĞèÒªÑ¯ÎÊ·ëÀÏÊ¦
-		pass
-		return
+	#éƒ¨åˆ†æ•°æ®åº“æ“ä½œè¿˜éœ€è¦è¯¢é—®å†¯è€å¸ˆ
+	pass
+	return
 
 if __name__ == "__main__":
-		print "cs gettaskinfo"
-		#CSgettaskinfo
-		camlist, tid = gettaskinfo()
-    print tid
-    print camlist
+	print "cs gettaskinfo"
+	#CSgettaskinfo
+	camlist ,tidx= gettaskinfo(1001)
+	#tid = gettaskinfo(1001).t.id
+    #print tid
+    print camlist,tidx
 	  
