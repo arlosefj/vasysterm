@@ -16,26 +16,26 @@ from common import *
 configfile = './config.json'
 
 def queryCPUInfo():
-		try:	
-	    data = psutil.virtual_memory()
-	    total = data.total #总内存,单位为byte
-	    free = data.available #可用内存
-        cpumem = %(int(round(data.percent)))
-        cpuusage = %psutil.cpu_percent(interval=1)
-        print "Memory usage:"+cpumem
-        print "CPU:"+cpuusage
-	    #cpumem =  "Memory usage:%d"%(int(round(data.percent)))+"%"+"  "
-	    #cpuusage = "CPU:%0.2f"%psutil.cpu_percent(interval=1)+"%"
-	  except:
-	  	info = "no cpu found"
-	  return cpumem,cpuusage
+    try:	
+	data = psutil.virtual_memory()
+	total = data.total #总内存,单位为byte
+	free = data.available #可用内存
+        cpumem = int(round(data.percent))
+        cpuusage = psutil.cpu_percent(interval=1)
+        #print "Memory usage:"+cpumem
+        #print "CPU:"+cpuusage
+        print "Memory usage:%d"%(int(round(data.percent)))+"%"+"  "
+	print "CPU:%0.2f"%psutil.cpu_percent(interval=1)+"%"
+    except:
+	info = "no cpu found"
+    return cpumem,cpuusage
 
 def sendstatus():
     # read config.json 
     jsondata = json.load(file(configfile))
     asname = jsondata['name']
     code = jsondata['code']
-	cpuid =  jsondata['cpuid']
+    cpuid =  jsondata['cpuid']
 		
     # get the status
     cpumem, cpuusage = queryCPUInfo()
@@ -46,7 +46,7 @@ def sendstatus():
     return 
     
 if  __name__=="__main__":
-	info = queryCPUInfo()
+    info = queryCPUInfo()
     sendstatus()
     print info
    

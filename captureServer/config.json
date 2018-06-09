@@ -3,6 +3,7 @@
     "cpuid":0,
     "code":1204,
     "localdir":"./image/",
+    "commandcode":"./test 2 \"rtsp://10.13.7.11:9090/dss/monitor/param?cameraid=",
     "databaseserver":
     {
         "name": "vasystem",
@@ -13,6 +14,6 @@
     "storageserver":
     {
         "ip": "127.0.0.1",
-        "dir": "/home/knowvision/data/"
+        "dir": "/home/zyy/knowvision/data/"
     }
 }

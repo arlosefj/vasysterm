@@ -18,32 +18,32 @@ from common import *
 
 #登录大华平台，根据相机列表，获取每个相机的rtsp码流地址
 def login():
-	#add code here
-	pass			
-	return
+    #add code here
+    pass			
+    return
 		
 # 获取解码任务信息
 def gettaskinfo(code):
     t = VTask.get(VTask.code == code)
-	tmplist = t.camlist.encode('ascii').split(';')
-	camlist = []
-	for string in tmplist:
+    tmplist = t.camlist.encode('ascii').split(';')
+    camlist = []
+    for string in tmplist:
         camcode, camnum = string.strip().split(',')
-		print camcode
+	#print camcode
         camlist.append((camcode.strip(),camnum.strip()))
     return camlist,t.id
 
 #获取相机预置位信息
 def getcampreset(camcode):
-	#部分数据库操作还需要询问冯老师
-	pass
-	return
+    #部分数据库操作还需要询问冯老师
+    pass
+    return
 
 if __name__ == "__main__":
-	print "cs gettaskinfo"
-	#CSgettaskinfo
-	camlist ,tidx= gettaskinfo(1001)
-	#tid = gettaskinfo(1001).t.id
+    print "cs gettaskinfo"
+    #CSgettaskinfo
+    camlist ,tidx= gettaskinfo(1001)
+    #tid = gettaskinfo(1001).t.id
     #print tid
     print camlist,tidx
 	  

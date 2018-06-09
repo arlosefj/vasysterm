@@ -6,29 +6,29 @@
 import json
 import datetime
 
-from CScpuinfo import queryCPUInfo
 import sys
+from CScpuinfo import queryCPUInfo
 sys.path.append("..")
-from database.MSdatabase import VServer
+from database.MSdatabase import  VServer 
 from common import *
 
 configfile = './config.json'
 
 def register():
-	# read config.json
+    # read config.json
     jsondata = json.load(file(configfile))
-	csname = jsondata['name']
-	cpuid =  jsondata['cpuid']
-	code = jsondata['code']
+    csname = jsondata['name']
+    cpuid =  jsondata['cpuid']
+    code = jsondata['code']
 		
-	# get the status
-	cpumem, cpuusage = queryCPUInfo(cpuid)
-	# register on the manage server database
-	try:
-		VServer.create(code=code, name=csname,servertype=VSERVER,status=SONLINE, cpumem=cpumem, cpuusage=cpuusage, regtime=datetime.datetime.now(), updatetime=datetime.datetime.now())
-	except:
-		print str(code)+" is registed"
-	return
+    # get the status
+    cpumem, cpuusage = queryCPUInfo()
+    # register on the manage server database
+    try:
+	VServer.create(code=code, name=csname, servertype=VSERVER, status=SONLINE, cpumem=cpumem, cpuusage=cpuusage, regtime=datetime.datetime.now(), updatetime=datetime.datetime.now())
+    except:
+        print str(code)+" is registed"
+    return
 
 if __name__ == "__main__":
     register()
